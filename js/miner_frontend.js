@@ -59,12 +59,15 @@ $().ready(function(){
     		});
     		$('#pool-sel-ethpool').click(function () {
                 document.getElementById('pool-cfg-poolurl').value='usl.ethpool.org:3333';
+                document.getElementById('mining_worker').innerHTML ='';
             });
     		$('#pool-sel-f2pool').click(function () {
                 document.getElementById('pool-cfg-poolurl').value='eth.f2pool.com:8008';
+                document.getElementById('mining_worker').innerHTML ='<input id="pool-cfg-workername" type="text" class="slim-input"><label for="pool-cfg-workername">矿工名称</label>';
             });
 			$('#pool-sel-nanopool').click(function () {
                 document.getElementById('pool-cfg-poolurl').value='eul.nanopool.org:9999';
+                document.getElementById('mining_worker').innerHTML ='<input id="pool-cfg-workername" type="text" class="slim-input"><label for="pool-cfg-workername">矿工名称</label>';
 			});
 			$("#dualmine-checkbox").click(function(){
                 var _check = $(this).is(':checked');
