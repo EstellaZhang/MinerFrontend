@@ -63,12 +63,11 @@
                         </div>
                     </div>
 
-                    <div class="row slim-row">
+                     <div class="row slim-row">
                         <div class="input-field col s6" id="mining_worker">
-                           
+                          <input id="pool-cfg-workername" type="text" class="slim-input"><label for="pool-cfg-workername">矿工名称</label> 
                         </div>
                     </div>
-
                     <br>
                     <br>
 
@@ -87,7 +86,7 @@
                             <input class="with-gap" name="poold-sel2" type="radio" value="lbry" id="poold-sel-lbry"  />
                             <label for="poold-sel-lbry">lbry</label>
 
-                            <input class="with-gap" name="poold-sel2" type="radio" id="poold-sel-custom"  />
+                            <input class="with-gap" name="poold-sel2" type="radio" value="custom" id="poold-sel-custom"  />
                             <label for="poold-sel-custom">自定义</label>
 
                         </p>
@@ -96,7 +95,7 @@
 
                         <div class="row slim-row">
                             <div class="input-field col s6">
-                                <input value="stratum+tcp://yiimp.ccminer.org:3252" id="poold-cfg-poolurl" type="text" class="slim-input" >
+                                <input value="stratum+tcp://yiimp.ccminer.org:3252" id="poold-cfg-poolurl" type="text" class="slim-input">
                                 <label for="poold-cfg-poolurl">矿池地址</label>
                             </div>
                         </div>
@@ -130,7 +129,7 @@
                 <form>
                     <br/><br/>
                     <h5>开始配置：<a href="#" class="help">帮助</a></h5><br/><br/>
-                   
+			<p id="no_name"></p>                   
                         <input class="with-gap" name="chkitem" type="checkbox" value="restart" id="pool-sel-reboot"  />
                         <label for="pool-sel-reboot">重启自动挖矿</label>
                         <br/><br/><br/>
