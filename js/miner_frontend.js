@@ -132,15 +132,15 @@ $().ready(function(){
 				$('#poold-cfg-passwd').val(data["-dpasw"]);
 				$('#poold-cfg-wallet').val(data["-dwal"]);
 				$('#pool-cfg-uname').val(data["username"]);
-                $('#pool-cfg-pwd').val("");
-                if (data["ifrestart"] == "restart"){
+                		$('#pool-cfg-pwd').val("");
+                		if (data["ifrestart"] == "restart"){
 					document.getElementById("pool-sel-reboot").checked=true;
-            	}	
+            			}	
 
-            	var radio_text = document.getElementById('pool-sel-ethpool').checked;
+            			var radio_text = document.getElementById('pool-sel-ethpool').checked;
 				if(radio_text == true){
 					$('#pool-cfg-workername').hide();
-            		$("[for='pool-cfg-workername']").hide();
+            				$("[for='pool-cfg-workername']").hide();
 				}
 				Materialize.updateTextFields();
 
