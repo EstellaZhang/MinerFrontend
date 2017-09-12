@@ -1,5 +1,18 @@
 $().ready(function(){
-    		$('#stop_mining').click(function(){
+
+    	$(document).ready(function() {
+    		var flag=0; //需要根据传递值的方式具体获取
+    		if(flag==0){//未在挖矿
+				$("#stop_mining").attr("disabled","disabled");
+            }else if(flag==1){//正在挖矿
+                $("#start_mining").attr("disabled","disabled");
+			}else{//未知状态
+				alert("非正常操作！");
+			}
+			//将滚动条置于最底端
+            window.scrollTo(0,document.body.scrollHeight);
+		});
+			$('#stop_mining').click(function(){
                 var r=confirm("确实停止挖矿吗?")
                 if (r==true)
                 {
@@ -69,6 +82,51 @@ $().ready(function(){
                     		}
     			});
     		});
+    		/*
+    		* 切换语言js
+    		* */
+		$('#english').click(function () {
+            $('#start_mining').html('Save&Mining');
+			$('#stop_mining').html('Stop Working');
+			$('#poolurl').html('Mine address');
+			$('#poolwallet').html('Wallet');
+			$('#poolpwd').html('Password');
+			$('#poolworkername').html('Miner name');
+			$('#double-mining').html('Double Mining');
+			$('#poold-sel-custom').html('Customize');
+			$('#slim-input').html('Mine address');
+			$('#poold-cfg-wallet').html('Wallet');
+			$('#poold-cfg-passwd').html('Password');
+			$('#help').html('Help');
+			$('#start').html('START');
+			$('#pool-sel-reboot').html('Reset&Start');
+			$('#pool-sel-choose').html('Allow other hosts to access');
+			$('#pool-cfg-uname').html('Plase enter your username');
+			$('#pool-cfg-pwd').html('Please enter your password');
+			$('#save_config').html('Submit');
+
+		});
+		$('#chinese').click(function () {
+            $('#start_mining').html('保存配置并开始挖矿');
+            $('#stop_mining').html('停止挖矿');
+            $('#poolurl').html('矿池地址');
+            $('#poolwallet').html('钱包');
+            $('#poolpwd').html('密码');
+            $('#poolworkername').html('矿工名称');
+            $('#double-mining').html('双挖');
+            $('#poold-sel-custom').html('自定义');
+            $('#slim-input').html('矿池地址');
+            $('#poold-cfg-wallet').html('钱包');
+            $('#poold-cfg-passwd').html('密码');
+            $('#help').html('帮助');
+            $('#start').html('开始配置');
+            $('#pool-sel-reboot').html('重启自动挖矿');
+            $('#pool-sel-choose').html('允许其他主机访问');
+            $('#pool-cfg-uname').html('请输入您的用户名');
+            $('#pool-cfg-pwd').html('请输入您的密码');
+            $('#save_config').html('提交');
+		});
+
     		$('#pool-sel-ethpool').click(function () {
                 document.getElementById('pool-cfg-poolurl').value='usl.ethpool.org:3333';
 				$('#pool-cfg-workername').hide();
@@ -146,5 +204,6 @@ $().ready(function(){
 
 			}
 		});
-	
-  	});
+
+
+});
